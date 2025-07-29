@@ -3,7 +3,7 @@ def menu():
     while True:
         print("MENU")
         print("1.Ingresar")
-        print("2.Buscar")
+        print("2.Mostrar")
         print("3.Salir")
         op = int(input("Ingrese su opción"))
         if op == 1:
@@ -14,6 +14,7 @@ def menu():
              while True:
                  if Id in empleados:
                      print("Ya esta Ingresado")
+                     break
                  else:
                     empleados[Id]={}
                     break
@@ -46,10 +47,22 @@ def menu():
               else:
                   break
              observaciones =input("Deja tu comentario para mejorar")
-             promedio = puntualidad + trabajoenequipo + productividad / 3
+             promedio = puntualidad + trabajoenequipo + productividad % 3
              print(f"el promedio es de {promedio}")
              empleados[Id]["Contacto"] = {}
              telefono = int(input("Ingrese telefono del empleado"))
              correo = input("Ingrese correo del empleado")
+
+        if op == 2:
+            print("lISTADO")
+            for Id, datos in empleados.items():
+             print(f"Nombre {empleados[Id]['nombre']}")
+
+
+
+        if op == 3:
+            buscado = input("Ingrese busqueda del empleado")
+            for Id, buscado in empleados.items():
+                print(f"Nombre {empleados[Id]['nombre']}")
 
 menu()
