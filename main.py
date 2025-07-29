@@ -57,7 +57,9 @@ def menu():
             print("lISTADO")
             for Id, datos in empleados.items():
              print(f"Nombre {empleados[Id]['nombre']}")
-
+             print(f"Departamento {empleados[Id]['Departamento']}")
+             print(f"años de antiguedad {empleados[Id]['años']}")
+             print
 
 
         if op == 3:
